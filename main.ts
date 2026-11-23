@@ -12,6 +12,11 @@ if (TEXT.length < 1 || TEXT.length > 280) {
   throw new Error(`TEXT must be 1-280 characters, got ${TEXT.length}`);
 }
 
+// The brief requires a one-line joke: no newline may sneak in.
+if (TEXT.includes("\n")) {
+  throw new Error("TEXT must be a single line, no newline allowed");
+}
+
 const out = process.argv[2] ?? "/output/entry.txt";
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, TEXT, "utf8");

@@ -38,3 +38,7 @@ Rejected: "it's not a bug, it's a feature" in new clothes — fails freshness (c
 
 - The joke bets on the escalation structure: if the judge reads "post-mortem, retrospective" as process jargon rather than escalation, the punchline still lands on "assigned the fix to me" — the turn is carried by the final clause alone, so the risk is contained.
 - The text is fully original; it reproduces no house anchor or rung.
+
+## Revision
+
+Second editing pass: `main.ts` now also guards that TEXT contains no newline — the brief requires a one-line joke, so a newline in TEXT throws an Error before anything is written. The joke text itself is unchanged (still exactly 113 characters / 113 bytes, verified byte-identical across two runs).
